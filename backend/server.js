@@ -43,6 +43,24 @@ app.post('/api/books',async (req, res)=>{
   res.status(201).json({"message":"Book Added!",Book:newBook});
 })
 
+app.get('/api/book/:id', async (req, res) => {
+  const book = await bookModel.findById(req.params.id);
+  res.json(book);
+});
+
+app.put('/api/book/:id', async (req, res) => {
+  let book = await bookModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.send(book);
+});
+
+app.delete('/api/book/:id', async (req, res) => {
+  
+  console.log('Deleting book with ID:', req.params.id);
+  //find the book by id and delete it from the list
+  const book = await bookModel.findByIdAndDelete(req.params.id);
+  res.status(200).send({ message: "Book deleted successfully", book });
+  
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
