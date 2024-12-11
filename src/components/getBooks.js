@@ -2,7 +2,7 @@ import Books from "./books";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const getBooks = () => {
+const GetBooks = () => {
 
   const [books, setBooks] = useState([]);
 
@@ -30,4 +30,4 @@ const getBooks = () => {
   );
 }
 
-export default getBooks;
+export default GetBooks;

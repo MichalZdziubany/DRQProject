@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 
 
-const MovieItem = (props)=> {
+const BookItem = (props)=> {
   useEffect(() => {
     console.log("Movie Item:", props.mybook);
   }, [props.mybook]); // Only run this effect when the mybook prop changes
@@ -25,4 +25,4 @@ const MovieItem = (props)=> {
   );
 }
 
-export default MovieItem;
+export default BookItem;

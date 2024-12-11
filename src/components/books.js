@@ -1,4 +1,4 @@
-import bookItem from "./bookItem";
+import BookItem from "./bookItem";
 
 const Books = (props)=>{
     return props.myBooks.map(
