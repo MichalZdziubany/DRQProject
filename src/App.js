@@ -5,6 +5,7 @@ import GetBooks from './components/getBooks';
 import AddBook from './components/addBook';
 import EditBook from './components/editBook';
 import Main from './components/mainPage';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/addBook" element={<AddBook />} />
         <Route path='/edit/:id' element={<EditBook />} />
       </Routes>
-    </Router>
+      <Footer></Footer>
+    </Router> 
   );
 }
 
