@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14');
+mongoose.connect('mongodb+srv://admin:<admin>@bookapp.zibpr.mongodb.net/?retryWrites=true&w=majority&appName=BookApp');
 
 const bookSchema = new mongoose.Schema({
   title:String,
@@ -31,4 +31,8 @@ const bookModel = new mongoose.model('345457',bookSchema);
 app.get('/api/books', async (req, res) => {
     const books = await bookModel.find({});
     res.status(200).json({books})
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
