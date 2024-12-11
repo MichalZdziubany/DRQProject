@@ -7,11 +7,11 @@ const Navigationbar = () => {
   return (
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
-            <Navbar.Brand href="/">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/">My Book Library</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/addBook">Create</Nav.Link>
-              <Nav.Link href="/getBooks">Read</Nav.Link>
+              <Nav.Link href="/">Home Page</Nav.Link>
+              <Nav.Link href="/addBook">Add A Book</Nav.Link>
+              <Nav.Link href="/getBooks">See Books</Nav.Link>
             </Nav>
           </Container>
       </Navbar>
