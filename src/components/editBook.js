@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import './books.css';
+import './addBook.css';
 
 export default function Edit(props) {
 //useParams in this case gets the id of the book we want to edit
@@ -38,14 +38,15 @@ const handleSubmit = (event) => {
     axios.put('http://localhost:4000/api/book/' + id, newBook)
         .then((res) => {
             console.log(res.data);
-            navigate('/read');
+            navigate('/getBooks');
         });
 }
 
 {/*form to edit books and send to database*/}
 return (
-    <div>
-        <form onSubmit={handleSubmit}>
+    <div className="add-book-container">
+        <div className="add-book-form-wrapper">
+        <form onSubmit={handleSubmit} className="add-book-form">
             <div className="form-group">
                 <label>Edit Book Title: </label>
                 <input type="text" 
@@ -75,9 +76,10 @@ return (
                 onChange={(e) => setGenre(e.target.value)} />
             </div>
             <div className="form-group">
-                <input type="submit" value="Edit Book" className="btn btn-primary" />
+                <input type="submit" value="Edit Book" className="submit-btn" />
             </div>
         </form>
+        </div>
     </div>
 );
 }
