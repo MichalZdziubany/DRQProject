@@ -1,0 +1,13 @@
+.footer {
+    background-color: #343a40; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }

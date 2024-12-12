@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import './books.css';
 
 const BookItem = (props)=> {
   useEffect(() => {
@@ -24,7 +25,7 @@ const BookItem = (props)=> {
 
   return (
     <div>
-      <Card>
+      <Card className="book-card">
         <Card.Header>{props.mybook.title}</Card.Header>
         <Card.Body>
           <blockquote className="blockquote mb-0">
@@ -33,9 +34,11 @@ const BookItem = (props)=> {
             <footer>{props.mybook.author}</footer>
           </blockquote>
         </Card.Body>
-        <Link to={"/edit/" + props.mybook._id} className="btn btn-primary">Edit Book</Link>
-        {/* delete button to invoke handle delete method */}
-        <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        <div  className="d-flex justify-content-between">
+          <Link to={"/edit/" + props.mybook._id} className="btn btn-primary">Edit Book</Link>
+          {/* delete button to invoke handle delete method */}
+          <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        </div>
       </Card>
     </div>
   );

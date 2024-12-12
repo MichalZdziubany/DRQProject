@@ -1,5 +1,14 @@
+import './footer.css';
+import { Container } from 'react-bootstrap';
+
 const Footer = () => {
-    return <h3>My Footer in another component</h3>;
-  };
-  
-  export default Footer;
+  return (
+    <footer className="footer bg-dark text-white py-3">
+      <Container className="text-center">
+        <p className="mb-0">&copy; {new Date().getFullYear()} Bookshelf. All Rights Reserved.</p>
+      </Container>
+    </footer>
+  );
+};
+
+export default Footer;

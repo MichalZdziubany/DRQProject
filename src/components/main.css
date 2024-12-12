@@ -1,0 +1,30 @@
+/* MainPage.css */
+.main-page {
+    background-color: #cdd1d4; /* Light background for a clean look */
+    padding: 2rem;
+  }
+  
+  h1 {
+    color: #343a40; /* Dark gray for a professional look */
+  }
+  
+  p {
+    color: #6c757d; /* Subtle gray for the description text */
+  }
+
+  .info-box {
+    border: 2px solid #343a40; /* Dark border to match the footer color */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    padding: 1.5rem;
+    background-color: #ffffff; /* White background inside the box */
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .info-box h2 {
+    color: #343a40; /* Header color */
+  }
+  
+  .info-box p {
+    color: #6c757d; /* Subtle text color */
+  }

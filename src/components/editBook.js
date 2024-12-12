@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import './books.css';
 
 export default function Edit(props) {
 //useParams in this case gets the id of the book we want to edit

@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import './addBook.css';
 
 const AddBook = () => {
 
@@ -8,20 +10,26 @@ const AddBook = () => {
     const [cover, setCover] = useState('');
     const [genre, setGenre] = useState('');
 
+    // Initialize useNavigate hook
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const book = {title,author,cover,genre};
         console.log(book);
 
         axios.post('http://localhost:4000/api/books',book)
-        .then((res)=>{console.log(res.data)})
+        .then((res)=>{console.log(res.data)
+            navigate('/getBooks');
+        })
         .catch();
     }
 
     return (
-        <div>
-            <h3>Fill in information to add a Book!</h3>
-            <form onSubmit={handleSubmit}>
+        <div className="add-book-container"> 
+            <h3 className="add-book-heading">Fill in information to add a Book!</h3>
+            <div className="add-book-form-wrapper">
+            <form onSubmit={handleSubmit} className="add-book-form">
                 <div className="form-group">
                     <label>Add Book Title: </label>
                     <input type="text"
@@ -55,9 +63,10 @@ const AddBook = () => {
                     />
                 </div>
                 <div>
-                    <input type="submit" value="Add Book"></input>
+                    <input type="submit" value="Add Book" className="submit-btn"></input>
                 </div>
             </form>
+            </div>
         </div>
     );
 }

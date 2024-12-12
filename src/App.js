@@ -9,6 +9,7 @@ import Footer from './components/footer';
 
 function App() {
   return (
+    <div style={{ backgroundColor: '#cdd1d4', minHeight: '100vh' }}>
     <Router>
       <NavigationBar />
       <Routes>
@@ -19,6 +20,7 @@ function App() {
       </Routes>
       <Footer></Footer>
     </Router> 
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import Books from "./books";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './books.css';
 
 const GetBooks = () => {
 
@@ -23,9 +24,12 @@ const GetBooks = () => {
   },[]);
 
   return (
+      
     <div>
-      <h3>Hello from read component!</h3>
-      <Books myBooks={books} ReloadBooks={ReloadBooks} />
+      <h2>View your books Here</h2>
+      <div id="bookContainer">
+        <Books myBooks={books} ReloadBooks={ReloadBooks} />
+      </div>
     </div>
   );
 }
