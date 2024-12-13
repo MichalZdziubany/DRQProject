@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import './books.css';
 
+//gets data from the database 
 const GetBooks = () => {
 
   const [books, setBooks] = useState([]);

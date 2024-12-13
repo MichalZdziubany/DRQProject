@@ -5,10 +5,11 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import './books.css';
 
+//deletion handling and layout for books
 const BookItem = (props)=> {
   useEffect(() => {
     console.log("Movie Item:", props.mybook);
-  }, [props.mybook]); // Only run this effect when the mybook prop changes
+  }, [props.mybook]);
 
   const handleDelete = (e)=>{
     e.preventDefault();
@@ -35,6 +36,7 @@ const BookItem = (props)=> {
           </blockquote>
         </Card.Body>
         <div  className="d-flex justify-content-between">
+          {/* edit button to reroute chosen book to edit page */}
           <Link to={"/edit/" + props.mybook._id} className="btn btn-primary">Edit Book</Link>
           {/* delete button to invoke handle delete method */}
           <Button variant="danger" onClick={handleDelete}>Delete</Button>

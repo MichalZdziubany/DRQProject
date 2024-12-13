@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './addBook.css';
 
+//on form submit the values inputted are posted to the database and user is rerouted
 const AddBook = () => {
 
     const [title, setTitle] = useState('');
@@ -10,7 +11,6 @@ const AddBook = () => {
     const [cover, setCover] = useState('');
     const [genre, setGenre] = useState('');
 
-    // Initialize useNavigate hook
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
